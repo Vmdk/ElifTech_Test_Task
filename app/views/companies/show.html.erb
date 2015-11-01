@@ -1,0 +1,38 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @company.name %>
+</p>
+
+<p>
+  <strong>Earnings:</strong>
+  <%= @company.earnings %>
+</p>
+
+<p>
+  <strong>Nesting level:</strong>
+  <%= @company.nesting_level %>
+</p>
+
+<p>
+  <strong>Master company:</strong>
+  <%= @company.master_company_id %>
+</p>
+
+<h1>Subsidiary companies</h1>
+
+<table>
+  <thead>
+    </thead>
+
+  <tbody>
+    <%= tree @company %>
+  </tbody>
+</table>
+
+<br>
+
+
+<%= link_to 'Edit', edit_company_path(@company) %> |
+<%= link_to 'Back', companies_path %>
